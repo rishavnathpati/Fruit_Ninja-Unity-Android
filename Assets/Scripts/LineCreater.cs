@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LineCreater : MonoBehaviour
 {
@@ -54,7 +53,7 @@ public class LineCreater : MonoBehaviour
             }
         }
 
-        else if(Application.platform==RuntimePlatform.WindowsPlayer)
+        else //if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
             if (Input.GetMouseButtonDown(0))
                 mouseDown = true;
@@ -80,6 +79,6 @@ public class LineCreater : MonoBehaviour
                     Destroy(box);
             }
         }
-        
+
     }
 }
