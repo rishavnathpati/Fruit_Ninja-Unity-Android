@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 891137163}
   m_Layer: 0
   m_Name: Line Renderer
-  m_TagString: Untagged
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruit: {fileID: 976345544083842095, guid: 83a29f77f03af1b4ba885e48fec8996c, type: 3}
   maxX: 9
+  maxSpawn: 5
 --- !u!1 &2016906661
 GameObject:
   m_ObjectHideFlags: 0
