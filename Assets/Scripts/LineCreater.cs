@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography;
+using UnityEngine;
 
 public class LineCreater : MonoBehaviour
 {
     int vertexCount = 0;
     bool mouseDown = false;
     LineRenderer line;
-
+    public GameObject blast;
 
 
 
@@ -80,5 +81,17 @@ public class LineCreater : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bomb"))
+        {
+            GameObject b= Instantiate(blast, collision.transform.position, Quaternion.identity) as GameObject;
+            Destroy(collision.gameObject);
+            Destroy(b.gameObject, 2f);
+
+        }
+           
     }
 }
