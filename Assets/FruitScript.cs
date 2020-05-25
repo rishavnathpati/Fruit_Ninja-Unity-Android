@@ -32,8 +32,12 @@ public class FruitScript : MonoBehaviour
 
 
 			Destroy(gameObject);
-
 		}
 
+		else if (col.gameObject.CompareTag("End"))
+        {
+			Destroy(gameObject);
+        }
 	}
+
 }
