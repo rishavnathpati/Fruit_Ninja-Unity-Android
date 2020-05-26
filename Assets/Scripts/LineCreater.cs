@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LineCreater : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class LineCreater : MonoBehaviour
     bool mouseDown = false;
     LineRenderer line;
     public GameObject blast;
-
+    public GameObject gameOverCanvas;
 
 
     private void Awake()
@@ -90,8 +91,18 @@ public class LineCreater : MonoBehaviour
             GameObject b= Instantiate(blast, collision.transform.position, Quaternion.identity) as GameObject;
             Destroy(collision.gameObject);
             Destroy(b.gameObject, 2f);
+            GameOver();
+        }     
+    }
 
-        }
-           
+    public void Restart()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void GameOver()
+    {
+        gameOverCanvas.SetActive(true);
+        FruitSpawner.instance.StopSpawning();
     }
 }

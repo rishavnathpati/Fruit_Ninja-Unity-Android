@@ -7,6 +7,14 @@ public class FruitSpawner : MonoBehaviour
     public GameObject bomb;
     public float maxX;
     public int maxSpawn;
+    public static FruitSpawner instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
